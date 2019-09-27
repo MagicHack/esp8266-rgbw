@@ -32,7 +32,19 @@ void rainbowFill(NeoPixelBus<T1, T2>& strip, const uint16_t& pixelCount){
 
 template<typename T1, typename T2, typename Color>
 void fillColor(NeoPixelBus<T1, T2>& strip, const uint16_t& pixelCount, const Color& color) {
-    for(uint16_t i = 0; i < pixelCount; i++) {
-        strip.SetPixelColor(i, color);
-    }
+  for(uint16_t i = 0; i < pixelCount; i++) {
+    strip.SetPixelColor(i, color);
+  }
+}
+
+template<typename T1, typename T2, typename Color>
+void fillPercentage(NeoPixelBus<T1, T2>& strip, const uint16_t& pixelCount, const Color& color1, const Color& color2, const uint8_t percentage) {
+  uint16_t maxPixel = float(percentage) / 100.0f * pixelCount;
+  uint16_t i = 0;
+  for(; i < maxPixel; i++) {
+    strip.SetPixelColor(i, color1);
+  }
+  for(; i < pixelCount; i++) {
+    strip.SetPixelColor(i, color2);
+  }
 }
