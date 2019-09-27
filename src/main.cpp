@@ -188,7 +188,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
   }
   else if(topicStr == "emile/bed/hue") {
-    if(value <= 100) {
+    if(value <= 360) {
       hueUpdated = true;
       hue = value;
     } 
@@ -364,6 +364,6 @@ void loop() {
   loopStart = millis();
   while(millis() - loopStart < ANIMATION_DELAY) {
     ArduinoOTA.handle();
+    client.loop();
   }
-  client.loop();
 }
