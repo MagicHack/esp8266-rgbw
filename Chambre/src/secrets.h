@@ -4,13 +4,13 @@
  */
 
 // WIFI Credentials
-const char* const WIFI_SSID = "***REMOVED***";
-const char* const WIFI_PASSWORD  = "***REMOVED***";
+const char* const WIFI_SSID = "SSID";
+const char* const WIFI_PASSWORD  = "password";
 
 // MQTT credentials
-const char* const MQTT_HOST = "192.168.190.2";
-const char* const MQTT_USER = "***REMOVED***";
-const char* const MQTT_PASSWORD = "***REMOVED***";
+const char* const MQTT_HOST = "hostname";
+const char* const MQTT_USER = "username";
+const char* const MQTT_PASSWORD = "password";
 
 // OTA password
 const char* const OTA_PASSWORD = "password";
